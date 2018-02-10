@@ -8,8 +8,7 @@ class checkoutController
 		$sql ="INSERT INTO `order_items`( `pid`, `qty`, `order_id`, `prod_title`, `prod_price`)
 		 VALUES ('".$key."','".$value['qty']."','".$last_id."','".$value['name']."','".$value['price']."')";
 		 $conn->exec($sql);
-
-	}	
+		}	
 	}
 }
 $check = new checkoutController;

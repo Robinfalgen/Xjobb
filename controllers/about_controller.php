@@ -1,7 +1,7 @@
 <?php
 
-	$sql = "SELECT * FROM pages WHERE id = 2";
-	$stmt = $conn->prepare($sql);
+	//$sql = "SELECT * FROM pages WHERE id = 2";
+	//$stmt = $conn->prepare($sql);
 	//$stmt->execute();
 	$fetchAbout = ['Alla partyhjältar behöver en riktig luftgitarr och här har du hittat Sveriges ledande butik för ändamålet.
 Vi kränger luftgitarrer i samma takt som ICA säljer tacos på fredagar och med livstids garanti och rätt tillbehör gör vi dig som redan är festens mittpunkt till alla sällskaps självklara luftgitarrkung!
@@ -12,5 +12,4 @@ Kontakt: info@luftgitarrer.se']; //$stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($fetchAbout);
 	
 	require(TEMPLATES_FOLDER.'aboutus.tpl.php');
-
 ?>

@@ -8,10 +8,6 @@
 			<input type="text" name="email">
 		</label>
 		<label>
-			<!--Username
-			<input type="text" name="username">-->
-		</label>
-		<label>
 			Password
 			<input type="password" name="password">
 		</label>
