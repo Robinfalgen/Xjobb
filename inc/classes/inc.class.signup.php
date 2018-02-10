@@ -4,7 +4,7 @@ class signup
 {
 	function run(){
 		if(!empty($_POST)) //OM POST VARIABELN HAR VÄRDE, GÖR FÖLJANDE
-	{
+		{
 		$username = $_POST['email'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
