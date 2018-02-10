@@ -39,7 +39,7 @@
 		<label>
 			Phone number
 			<input type="text" name="phone">
-		</label>-->
+		</label>
 	</fieldset>
 	<input type="submit" value="Sign up">
 </form>
