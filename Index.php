@@ -42,23 +42,23 @@ class StartIndex{
 		/*
 
 		*/
-	if (isset($_GET['action'])) {
-		if(!array_key_exists($_GET['action'], $routes)) {
-		require(CONTROLLERS_FOLDER.'404.php');
-		} else {
-			if (is_file(CONTROLLERS_FOLDER . $routes[$_GET['action']])) {
-				require(CONTROLLERS_FOLDER . $routes[$_GET['action']]);
+		if (isset($_GET['action'])) {
+			if(!array_key_exists($_GET['action'], $routes)) {
+			require(CONTROLLERS_FOLDER.'404.php');
 			} else {
-				echo "Filen finns inte";
+				if (is_file(CONTROLLERS_FOLDER . $routes[$_GET['action']])) {
+					require(CONTROLLERS_FOLDER . $routes[$_GET['action']]);
+				} else {
+					echo "Filen finns inte";
+				}
 			}
+		} else if (isset($_GET['q'])) {
+			require(CONTROLLERS_FOLDER.$routes['search']);
 		}
-	} else if (isset($_GET['q'])) {
-		require(CONTROLLERS_FOLDER.$routes['search']);
+		else {
+			require(CONTROLLERS_FOLDER.$routes['default']);
+		}
 	}
-	else {
-		require(CONTROLLERS_FOLDER.$routes['default']);
-	}
-}
 }
 
 $start = new StartIndex;
