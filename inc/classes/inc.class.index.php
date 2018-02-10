@@ -6,6 +6,8 @@ class StartIndex{
 		// Standard
 		'default' => 'start_controller.php',
 		'about' => 'about_controller.php',
+		'usercond' => 'usercond_controller.php',
+		'shipcond' => 'shipcond_controller.php',
 		
 		// Produkter 
 		'product' => 'product_controller.php',
