@@ -3,7 +3,7 @@
 	
 	<footer>
 		<div class="terms-links">
-			<a href="#">&copy; Luftgitarrer.se 2017</a>
+			<a href="?action=about">&copy; Luftgitarrer.se 2018</a>
 			<a href="?action=about">Om oss</a>
 			<a href="?action=usercond">Användarvillkor</a>
 			<a href="?action=shipcond">Frakt & Returer</a>
