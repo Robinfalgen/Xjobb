@@ -1,7 +1,7 @@
 <?php
 include (INCLUDES_FOLDER.'db.conn.inc.php');
-include (CLASS_DIR .'inc.class.start.php');
 
+include (CLASS_DIR .'inc.class.start.php');
 $start = new StartClass;
 $result = $start->start();
 

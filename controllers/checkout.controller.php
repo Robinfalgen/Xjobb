@@ -1,5 +1,6 @@
 <?php
 require_once(INCLUDES_FOLDER.'db.conn.inc.php');
+
 class checkoutController
 {
 	public function checkout()
@@ -13,4 +14,5 @@ class checkoutController
 }
 $check = new checkoutController;
 $check->checkout();
+
 require(TEMPLATES_FOLDER.'checkout.tpl.php');
