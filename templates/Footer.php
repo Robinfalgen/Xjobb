@@ -4,7 +4,7 @@
 	<footer>
 		<div class="terms-links">
 			<a href="#">&copy; Luftgitarrer.se 2017</a>
-			<a href="#">Om oss</a>
+			<a href="?action=about">Om oss</a>
 			<a href="#">Användarvillkor</a>
 			<a href="#">Allmänna villkor</a>
 			<a href="#">Sekretesspolicy</a>

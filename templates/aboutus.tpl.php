@@ -1,11 +1,15 @@
 <?php
 	require(TEMPLATES_FOLDER.'Header.php');
-	
-		foreach($fetchAbout as $about) {
 ?>
 
-<?php echo $about; ?>
+<div id="<about">
+	<p><?php echo $fetchAbout?></p>
+</div>
+
+
 <?php
-}
 	require(TEMPLATES_FOLDER.'Footer.php');
 ?>
+
+
+
