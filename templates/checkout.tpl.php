@@ -1,5 +1,6 @@
 <?php
 	require(TEMPLATES_FOLDER.'Header.php');
+	include_once(CLASS_DIR . 'inc.class.cart.php');
 ?>
 
 <h1>Checkout</h1>
@@ -7,12 +8,21 @@
 <div class="checkout"><div class="finalCart">
 	<h3>Varukorg</h3>
 	<form method="post" action="?action=updatecart">
-<?php 
-		if(isset($cart['cartItems'])) {
+		
+<?php 	
+	$cart = new Cart;
+	$cart->getCartItems();
+	$cartArray = (array) $cart;
+	
+
+	
+		if(isset($cartArray)) {
 ?>
 		<?php
-		foreach ($cart['cartItems'] as $cartItemPid => $cartItemData){
-		?>
+		foreach ($cartArray['cart'] as $key => $value){
+			foreach ($value as $cartItemPid => $cartItemData) {
+				var_dump($cartItemData);
+			?>
 	<div class="cart-flex">
 		<div class="cart-flex-img"><img width="50" src="<?php echo IMG_DIR.$cartItemData['img']; ?>"></div>
 		<div class="cart-flex-item"><h2 class="nobig"><?php echo $cartItemData['name']; ?></h2>
@@ -25,10 +35,12 @@
 	<?php
 		}
 		}
+	}
+
 	?>
 		<div class="cart-sum">
 			TOTAL SUMMA: 
-			<div class="right"><?php echo $cart['total']; ?> kr</div>
+			<div class="right"><?php //echo $cartArray['total']; ?>kr</div>
 		</div>
 	</form>
 </div>
