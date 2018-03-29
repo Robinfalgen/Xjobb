@@ -1,13 +1,30 @@
-<?php 
-class checkoutController
+<?php
+//include(CLASS_DIR . 'inc.class.cart.php');
+require_once(INCLUDES_FOLDER.'db.conn.inc.php');
+
+class checkoutClass //extends Cart
 {
+	public $cart;
 	public function checkout()
 	{
-		foreach ($cart['cartItems'] as $key => $value) {
-		$sql ="INSERT INTO `order_items`( `pid`, `qty`, `order_id`, `prod_title`, `prod_price`)
-		 VALUES ('".$key."','".$value['qty']."','".$last_id."','".$value['name']."','".$value['price']."')";
-		 $conn->exec($sql);
-		}	
+		/*$cart = array();
+		$currentcart = new Cart;
+		$currentcart->getCartItems();
+		$cart = $currentcart;
+		$this->cart = $cart;
+		//var_dump(get_object_vars($cart));
+		return get_object_vars($cart);
+
+		*/
+		
+
+		
+											
 	}
+	public function getCart(){
+		
+	}
+
+	
+
 }
-?>

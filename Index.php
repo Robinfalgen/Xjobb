@@ -20,7 +20,7 @@ if(!isset($_SESSION['cart'])) {
 	$_SESSION['cart'] = array();
 } 
 
-include(CLASS_DIR .'inc.class.cart.php');
+require_once(CLASS_DIR .'inc.class.cart.php');
 
 
 
@@ -29,6 +29,6 @@ $getCartItems = new Cart;
 $getCartItems->getCartItems();
 $prod = $getCartItems->prod;
 $cart = $getCartItems->cart;
-$totamSum = $getCartItems->totalSum;
+$totalSum = $getCartItems->totalSum;
 
 require(TEMPLATES_FOLDER.'cart.tpl.php');

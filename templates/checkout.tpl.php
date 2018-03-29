@@ -13,7 +13,7 @@
 	$cart = new Cart;
 	$cart->getCartItems();
 	$cartArray = (array) $cart;
-	
+	var_dump($cartArray);
 
 	
 		if(isset($cartArray)) {
@@ -21,7 +21,7 @@
 		<?php
 		foreach ($cartArray['cart'] as $key => $value){
 			foreach ($value as $cartItemPid => $cartItemData) {
-				var_dump($cartItemData);
+				
 			?>
 	<div class="cart-flex">
 		<div class="cart-flex-img"><img width="50" src="<?php echo IMG_DIR.$cartItemData['img']; ?>"></div>
@@ -40,7 +40,7 @@
 	?>
 		<div class="cart-sum">
 			TOTAL SUMMA: 
-			<div class="right"><?php //echo $cartArray['total']; ?>kr</div>
+			<div class="right"><?php echo $cartArray['totalSum']; ?>kr</div>
 		</div>
 	</form>
 </div>
@@ -52,25 +52,25 @@
 	<fieldset>
 	<label class="acclabel" for="fname">Förnamn</label> <span class="error">* </span><br>
 	<input type="text" class="accform" autofocus="yes" id="fname" name="checkout[fname]" placeholder="Förnamn som på ditt ID" value="<?php if(isset($_POST['checkout']['fname'])) { echo $firstName; } else { echo $member['fname']; } ?>">
-	<?php echo $fnameErr; ?><br>
+	<?php //echo $fnameErr; ?><br>
 
 	<label class="acclabel" for="lname">Efternamn</label> <span class="error">* </span><br>
 	<input type="text" class="accform" id="lname" name="checkout[lname]" placeholder="Efternamn som på ditt ID" value="<?php if(isset($_POST['checkout']['lname'])) { echo $lastName; } else { echo $member['lname']; } ?>">
-	<?php echo $lnameErr; ?><br>
+	<?php //echo $lnameErr; ?><br>
 	
 	<label class="acclabel" for="email">Epost</label> <span class="error">* </span><br>
 	<input type="text" class="accform" id="email" name="checkout[email]" placeholder="E-post" value="<?php if(isset($_POST['checkout']['email'])) { echo $email; } else { echo $member['email']; } ?>">
-	<?php echo $emailErr; ?><br>
+	<?php //echo $emailErr; ?><br>
 
 	<label class="acclabel" for="number">Mobilnummer</label> <span class="error">* </span><br>
 	<input type="text" class="accform" id="number" name="checkout[phone]" placeholder="07xxxxxxxx" value="<?php if(isset($_POST['checkout']['phone'])) { echo $phoneNumber; } else { echo $member['phone']; } ?>">
-	<?php echo $phoneErr; ?><br>
+	<?php //echo $phoneErr; ?><br>
 	
 	<label class="acclabel">Adress <span class="error">* </span><br></label>
 	<input type="text" class="accform" tabindex="3" id="adress" name="checkout[adress]" placeholder="Postadress" value="<?php if(isset($_POST['checkout']['adress'])) { echo $regAdress; } else { echo $member['adress']; } ?>"><br>
 	<input type="number" class="accform zip" id="zip" maxlength="5" name="checkout[zip]" placeholder="12345" value="<?php if(isset($_POST['checkout']['zip'])) { echo $regZip; } else { echo $member['zip']; } ?>">
 	<input type="text" class="accform city" id="city" name="checkout[city]" placeholder="Ort" value="<?php if(isset($_POST['checkout']['city'])) { echo $regCity; } else { echo $member['city']; } ?>"></label>
-	<?php echo $adressErr; echo $zipErr; echo $cityErr; ?><br>
+	<?php //echo $adressErr; echo $zipErr; echo $cityErr; ?><br>
 	
 	<input type="checkbox" id="invoice" name="alt[altbox]">
 	<label for="invoice">Använd alternativ adress</label>
