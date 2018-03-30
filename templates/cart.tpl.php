@@ -8,11 +8,6 @@
 		if(isset($cart['cartItems'])) {
 	?>
 		<?php
-
-			echo '<pre>';
-			var_dump($cart);
-			echo '</pre>';
-
 			foreach ($cart['cartItems'] as $cartItemPid => $cartItemData){
 		?>
 		<div class="cart-flex">

@@ -9,18 +9,12 @@
 	<h3>Varukorg</h3>
 	<form method="post" action="?action=updatecart">
 		
-<?php 	
-	$cart = new Cart;
-	$cart->getCartItems();
-	$cartArray = (array) $cart;
-	var_dump($cartArray);
-
-	
-		if(isset($cartArray)) {
-?>
+	<?php 	
+	 	$cart = get_object_vars($cart);
+		if(isset($cart)) {
+	?>
 		<?php
-		foreach ($cartArray['cart'] as $key => $value){
-			foreach ($value as $cartItemPid => $cartItemData) {
+		foreach ($cart['cart']['cartItems'] as $key=> $cartItemData){
 				
 			?>
 	<div class="cart-flex">
@@ -35,12 +29,12 @@
 	<?php
 		}
 		}
-	}
+	
 
 	?>
 		<div class="cart-sum">
 			TOTAL SUMMA: 
-			<div class="right"><?php echo $cartArray['totalSum']; ?>kr</div>
+			<div class="right"><?php echo $cart['totalSum']; ?>kr</div>
 		</div>
 	</form>
 </div>
