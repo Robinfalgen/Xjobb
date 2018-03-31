@@ -1,5 +1,6 @@
 <?php
 class StartIndex{
+	
 	public function routes(){
 
 		$routes = array( 
@@ -20,7 +21,7 @@ class StartIndex{
 		'removecartitem'  => 'cart_controller.php',
 		'updatecart'  => 'cart_controller.php',
 		'checkout' => 'checkout.controller.php',
-		'purchase' => 'checkout_final_controller.php',
+		'purchase' => 'checkout_purchase_controller.php',
 		
 		// Kundrelaterat
 		'signup' => 'signup_controller.php',

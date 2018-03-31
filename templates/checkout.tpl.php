@@ -38,7 +38,7 @@
 		</div>
 	</form>
 </div>
-<form method="post" action="">
+<form method="post" action="?action=purchase">
 	<div class="step-one">
 		<h3>Användaruppgifter</h3>
 		<fieldset>
