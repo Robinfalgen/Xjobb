@@ -1,5 +1,5 @@
 <?php
-
+ 
 class login
 {
 	protected $auth;
@@ -20,7 +20,7 @@ class login
 
 			if($signin)// OM $signin HAR FÅTT ETT VÄRDE FRÅN RADERNA OVAN, HÄNVISAS MAN TILLBAKS TILL INDEX FILEN (STARTSIDAN)
 			{
-				//header('Refresh: 0'); 
+				echo '<script>window.location="index.php";</script>';
 			}
 		}
 	}

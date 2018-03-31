@@ -44,24 +44,15 @@ class Database extends DBconn
 	public function insert($data) //SKICKAR OCH SPARAR DATA I DATABASEN (EFTER VALIDERINGEN GÅTT IGENOM)
 	{
 		$keys = array_keys($data);
-		echo '<pre>';
-		echo 'KEYS: '; 
-		var_dump($keys);
-		echo '</pre>';
+		
 		$fields = '`' . implode('`, `', $keys) . '`';
-		echo '<pre>';
-		echo 'FIELDS: ';
-		var_dump($fields);
-		echo '</pre>';
+		
 		$placeholders = ':' . implode(', :', $keys);
-		echo '<pre>';
-		echo 'PLACEHOLDERS: ';
-		var_dump($placeholders);
-		echo '</pre>';
+		
 		$sql = "INSERT INTO {$this->table} ({$fields}) VALUES ({$placeholders})";
-		//echo 'SQL QUERY: ' . $sql;
+		
 		$this->stmt = $this->pdo->prepare($sql);
-		//var_dump($this->stmt);
+		
 		return $this->stmt->execute($data);
 	}
 
