@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Mar 05, 2018 at 08:34 PM
+-- Generation Time: Mar 31, 2018 at 11:07 PM
 -- Server version: 5.5.49-log
 -- PHP Version: 7.0.9
 
@@ -55,12 +55,63 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `payment` varchar(55) NOT NULL,
   `lev_fname` varchar(55) NOT NULL,
   `lev_lname` varchar(55) NOT NULL,
+  `email` varchar(155) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `lev_adress` varchar(55) NOT NULL,
   `lev_city` varchar(55) NOT NULL,
   `lec_zip` varchar(55) NOT NULL,
   `fraktsatt` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `buy_date`, `payment`, `lev_fname`, `lev_lname`, `email`, `phone`, `lev_adress`, `lev_city`, `lec_zip`, `fraktsatt`) VALUES
+(1, 2, '2018-03-31 19:56:49', 'paypal', 'robin', 'magnusson', 'robin@gmail.com', '1237615234', 'stambanevägen 21', 'huddinge', '16866', 'postnord'),
+(13, 5, '2018-03-31 21:32:25', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(14, 5, '2018-03-31 21:34:55', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(15, 5, '2018-03-31 21:35:32', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(16, 5, '2018-03-31 21:39:13', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(17, 5, '2018-03-31 21:40:39', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(18, 5, '2018-03-31 21:41:09', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(19, 5, '2018-03-31 21:41:52', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(20, 5, '2018-03-31 21:43:12', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(21, 5, '2018-03-31 21:43:45', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(22, 5, '2018-03-31 21:44:42', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(23, 5, '2018-03-31 21:45:34', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(24, 5, '2018-03-31 21:48:09', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(25, 5, '2018-03-31 21:50:48', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(26, 5, '2018-03-31 21:51:10', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(27, 5, '2018-03-31 21:52:02', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(28, 5, '2018-03-31 21:54:23', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(29, 5, '2018-03-31 21:57:02', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(30, 5, '2018-03-31 21:57:33', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(31, 5, '2018-03-31 21:58:13', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(32, 5, '2018-03-31 22:06:43', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(33, 5, '2018-03-31 22:07:05', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(34, 5, '2018-03-31 22:16:53', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(35, 5, '2018-03-31 22:17:17', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(36, 5, '2018-03-31 22:19:34', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(37, 5, '2018-03-31 22:22:57', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(38, 5, '2018-03-31 22:23:13', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(39, 5, '2018-03-31 22:25:48', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(40, 5, '2018-03-31 22:27:31', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(41, 5, '2018-03-31 22:31:49', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(42, 5, '2018-03-31 22:33:29', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(43, 5, '2018-03-31 22:37:41', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(44, 5, '2018-03-31 22:43:18', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(45, 5, '2018-03-31 22:44:46', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(46, 5, '2018-03-31 22:45:19', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(47, 5, '2018-03-31 22:47:49', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(48, 5, '2018-03-31 22:48:09', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(49, 5, '2018-03-31 22:48:51', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(50, 5, '2018-03-31 22:51:52', 'faktura', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'post-express'),
+(51, 5, '2018-03-31 22:53:22', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(52, 5, '2018-03-31 22:54:35', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(53, 5, '2018-03-31 22:55:30', 'kort', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(54, 5, '2018-03-31 22:55:56', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord'),
+(55, 5, '2018-03-31 23:00:23', 'swish', 'robin', 'magnusson', 'robin.falgen@gmail.com', '761339264', 'SolbergsvÃ¤gen 57', 'Bromma', '16866', 'postnord');
 
 -- --------------------------------------------------------
 
@@ -75,7 +126,31 @@ CREATE TABLE IF NOT EXISTS `order_item` (
   `order_id` int(11) NOT NULL,
   `product_title` varchar(55) NOT NULL,
   `product_price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_item`
+--
+
+INSERT INTO `order_item` (`order_item_id`, `pid`, `qty`, `order_id`, `product_title`, `product_price`) VALUES
+(9, 3, 4, 2, 'bas', 29),
+(10, 3, 4, 2, 'bas', 29),
+(11, 3, 4, 2, 'bas', 29),
+(12, 1, 2, 51, 'Fender Modern Player Telecaster luft', 3900),
+(13, 3, 12, 51, 'Ibanez KOMRAD20 Head, Red Splatter luft', 7000),
+(14, 15, 1, 51, 'Lakland Skyline Hollowbody Bass', 12000),
+(15, 1, 2, 52, 'Fender Modern Player Telecaster luft', 3900),
+(16, 3, 12, 52, 'Ibanez KOMRAD20 Head, Red Splatter luft', 7000),
+(17, 15, 1, 52, 'Lakland Skyline Hollowbody Bass', 12000),
+(18, 1, 2, 53, 'Fender Modern Player Telecaster luft', 3900),
+(19, 3, 12, 53, 'Ibanez KOMRAD20 Head, Red Splatter luft', 7000),
+(20, 15, 1, 53, 'Lakland Skyline Hollowbody Bass', 12000),
+(21, 1, 2, 54, 'Fender Modern Player Telecaster luft', 3900),
+(22, 3, 12, 54, 'Ibanez KOMRAD20 Head, Red Splatter luft', 7000),
+(23, 15, 1, 54, 'Lakland Skyline Hollowbody Bass', 12000),
+(24, 1, 2, 55, 'Fender Modern Player Telecaster luft', 3900),
+(25, 3, 12, 55, 'Ibanez KOMRAD20 Head, Red Splatter luft', 7000),
+(26, 15, 1, 55, 'Lakland Skyline Hollowbody Bass', 12000);
 
 -- --------------------------------------------------------
 
@@ -210,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userlvl` int(11) DEFAULT NULL,
   `phone` int(11) DEFAULT NULL,
   `username` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -218,7 +293,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_id`, `fname`, `lname`, `email`, `password`, `address`, `zip`, `city`, `userlvl`, `phone`, `username`) VALUES
 (4, 'Joy', 'Lindström', 'joy.lindstrom2@gmail.com', '$2y$10$ioFTwiRYWG4oXEuW/6fPm.rcFpRk3RMC3l2jS4m6gp79FssP0ijt6', 'Kristallvägen 9', '126 78', 'Hägersten', 1, 707208638, 'joy.lindstrom2@gmail.com'),
-(5, 'robin', 'magnusson', 'robin.falgen@gmail.com', '$2y$10$bOvH1VcbisYdrmYf5CrXsujTeWcTO9hddCAzaCuCVim/k4drTrhkW', 'SolbergsvÃ¤gen 57', '16866', 'Bromma', 1, 761339264, 'robin.falgen@gmail.com');
+(5, 'robin', 'magnusson', 'robin.falgen@gmail.com', '$2y$10$bOvH1VcbisYdrmYf5CrXsujTeWcTO9hddCAzaCuCVim/k4drTrhkW', 'SolbergsvÃ¤gen 57', '16866', 'Bromma', 1, 761339264, 'robin.falgen@gmail.com'),
+(6, 'Robin', 'FalgÃ¨n', 'robin@gmail.com', '$2y$10$y80O1mFgASzxTP..3BCwL.9TdqaC7eY1zkjmsGgEajpT7tx63YBba', 'SolbergsvÃ¤gen 57', '16866', 'Bromma', 1, 761339264, 'robin@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -287,6 +363,16 @@ ALTER TABLE `users`
 ALTER TABLE `category`
   MODIFY `category_id` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
+--
+-- AUTO_INCREMENT for table `order_item`
+--
+ALTER TABLE `order_item`
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -300,7 +386,7 @@ ALTER TABLE `product_img`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
