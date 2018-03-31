@@ -3,6 +3,7 @@ require_once(INCLUDES_FOLDER . 'db.conn.inc.php'); //EXTENDA ISTÄLLET ??
 
 class Auth //AUTHORISE CLASS
 {
+	public $test = 'hej';
 	protected $db; // DB NAME
 	protected $hash; //HASH,PW
 	protected $session = 'users'; // SESSION, USER

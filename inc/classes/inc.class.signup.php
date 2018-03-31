@@ -1,8 +1,9 @@
 <?php
 require_once INCLUDES_FOLDER. 'init.inc.php';
+
 class signup
 {
-	function run(){
+	function run($database, $errorHandler){
 		if(!empty($_POST)) //OM POST VARIABELN HAR VÄRDE, GÖR FÖLJANDE
 		{
 		$username = $_POST['email'];
@@ -64,7 +65,6 @@ class signup
 				'required' => true,
 				'minlength' => 9
 			]
-
 		]);
 
 		
@@ -74,6 +74,9 @@ class signup
 		}
 		else
 		{	// OM VALIDERINGEN GÅR IGEN, KÖRS FUNKTIONEN CREATE I AUTH, SOM SETT FÖLJANDE VÄRRDEN
+			$hash = new Hash; /// HASH INSTANS, HASHAR LÖSENORDER / VERIFIERAR ATT HASHNINGEN STÄMMER
+			$auth = new Auth($database, $hash); // INSTANTIERAR EN NY AKTORISERARE
+			
 			$created = $auth->create([
 				'email' => $email,
 				'username' => $email,
