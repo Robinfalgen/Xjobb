@@ -1,5 +1,5 @@
 <?php
-//include_once(CLASS_DIR . 'inc.class.cart.php');
+include_once(CLASS_DIR . 'inc.class.cart.php');
 require_once(INCLUDES_FOLDER.'db.conn.inc.php');
 
 class checkoutClass
@@ -43,56 +43,98 @@ class checkoutClass
 	
 	
 	
-	$date = date("Y\-m\-d");
+	
 	if ($_SESSION['users'] == null){
 		$user = "ejInloggad";
 	}else{
 		$user = $_SESSION['users'];
 	}
 
-	echo $user;
+	
 	if (isset($_POST['checkout']))
 	{ 
 
 	$connect = new DBconn;
 	$conn = $connect->conn();
-	$sql = "INSERT INTO `orders`(`user_id`, `buy_date`, `payment`, `lev_fname`, `lev_lname`, `email`, `phone`, `lev_adress`, `lev_city`, `lec_zip`,  `fraksatt`) 
-	VALUES (:paramuid, :paramDate, :paramPay,:paramLevFname,:paramLevLname, :paramEmail, :paramPhone,:paramAdress,:paramZip,:paramCity,:paramFrakt)";
+	$sql = "INSERT INTO `orders`( `user_id`,  `payment`, `lev_fname`, `lev_lname`, `email`, `phone`, `lev_adress`, `lev_city`, `lec_zip`, `fraktsatt`) VALUES (:paramUsrId, :paramPay, :paramLevFname, :paramLevLname, :paramEmail, :paramPhone, :paramAdress, :paramCity, :paramZip, :paramFrakt)"	;
+	
+
+
+	
+	
+
+	$orderfname = $_POST['checkout']['fname'];
+	$orderlname = $_POST['checkout']['lname'];
+	$orderemail = $_POST['checkout']['email'];
+	$orderphone = $_POST['checkout']['phone'];
+	$orderadress = $_POST['checkout']['adress'];
+	$orderzip = $_POST['checkout']['zip'];
+	$ordercity = $_POST['checkout']['city'];
+	$orderpay = $_POST['checkout']['betalning'];
+	$orderfrakt =  $_POST['checkout']['frakt'];
+	
+	$orderuserid = $user;
+
+
+	
+
+
+
+
+	
+
 
 	$stmt = $conn->prepare($sql);
-	$stmt->bindParam(':paramuid', $user);
-	$stmt->bindParam(':paramDate', $date);
-	$stmt->bindParam(':paramLevFname', $_POST['checkout']['fname']);
-	$stmt->bindParam(':paramLevLname', $_POST['checkout']['lname']);
-	$stmt->bindParam(':paramEmail', $_POST['checkout']['email']);
-	$stmt->bindParam(':paramPhone', $_POST['checkout']['phone']);
-	$stmt->bindParam(':paramAdress', $_POST['checkout']['adress']);
-	$stmt->bindParam(':paramZip', $_POST['checkout']['zip']);
-	$stmt->bindParam(':paramCity', $_POST['checkout']['city']);
-	$stmt->bindParam(':paramPay', $_POST['checkout']['betalning']);
-	$stmt->bindParam(':paramFrakt', $_POST['checkout']['frakt']);
+		
+	$stmt->bindParam(':paramUsrId', $orderuserid);
+	
+	$stmt->bindParam(':paramLevFname', $orderfname);
+	$stmt->bindParam(':paramLevLname', $orderlname);
+	$stmt->bindParam(':paramEmail', $orderemail);
+	$stmt->bindParam(':paramPhone', $orderphone);
+	$stmt->bindParam(':paramAdress', $orderadress);
+	$stmt->bindParam(':paramZip', $orderzip);
+	$stmt->bindParam(':paramCity', $ordercity);
+	$stmt->bindParam(':paramPay', $orderpay);
+	$stmt->bindParam(':paramFrakt', $orderfrakt);
 	$stmt->execute();
-	var_dump($stmt);
-	//var_dump($stmt);
-	//echo"<br>";
-	//var_dump($_POST);
-	/*$cart = new Cart;
+
+
+
+
+
+
+
+
+
+	
+	
+	$cart = new Cart;
 	$cart->getCartItems();
-	$cart = get_object_vars($cart);*/
-	//var_dump($cart);
+	$cart = get_object_vars($cart);
+	
 	$last_id = $conn->lastInsertId();
+	
 
-	/*foreach ($cart['cart']['cartItems'] as $key => $value) {
-		$sql ="INSERT INTO `order_items`( `pid`, `qty`, `order_id`, `prod_title`, `prod_price`)
-		 VALUES ('".$key."','".$value['qty']."','".$last_id."','".$value['name']."','".$value['price']."')";
+
+
+
+
+foreach ($cart['cart']['cartItems'] as $key => $value) {
+		$sql ="INSERT INTO `order_item`(`pid`, `qty`, `order_id`, `product_title`, `product_price`)
+			VALUES ('".$key."','".$value['qty']."','".$last_id."','".$value['name']."','".$value['price']."')";
 		 $conn->exec($sql);
-		 }	
-	*/
-$conn->exec($sql);
-var_dump($sql);	
+		 }
+
+
+
+
+		
+
+
 }
 }
 }
 
-var_dump($_SESSION);
+
 
