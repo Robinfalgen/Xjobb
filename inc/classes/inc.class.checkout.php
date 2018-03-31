@@ -1,8 +1,9 @@
 <?php
-//include(CLASS_DIR . 'inc.class.cart.php');
+//include_once(CLASS_DIR . 'inc.class.cart.php');
 require_once(INCLUDES_FOLDER.'db.conn.inc.php');
 
 class checkoutClass
+ 
 {
 	public $user_id;
 	public $fname;
@@ -39,18 +40,28 @@ class checkoutClass
 	}
 	public function setOrderData()
 	{
+	
+	
+	
 	$date = date("Y\-m\-d");
+	if ($_SESSION['users'] == null){
+		$user = "ejInloggad";
+	}else{
+		$user = $_SESSION['users'];
+	}
+
+	echo $user;
 	if (isset($_POST['checkout']))
 	{ 
-	echo "spenny";
+
 	$connect = new DBconn;
 	$conn = $connect->conn();
 	$sql = "INSERT INTO `orders`(`user_id`, `buy_date`, `payment`, `lev_fname`, `lev_lname`, `email`, `phone`, `lev_adress`, `lev_city`, `lec_zip`,  `fraksatt`) 
 	VALUES (:paramuid, :paramDate, :paramPay,:paramLevFname,:paramLevLname, :paramEmail, :paramPhone,:paramAdress,:paramZip,:paramCity,:paramFrakt)";
 
 	$stmt = $conn->prepare($sql);
-	$stmt->bindParam(':paramuid', $_SESSION['users']);
-	$stmt->bindParam(":paramDate", $date);
+	$stmt->bindParam(':paramuid', $user);
+	$stmt->bindParam(':paramDate', $date);
 	$stmt->bindParam(':paramLevFname', $_POST['checkout']['fname']);
 	$stmt->bindParam(':paramLevLname', $_POST['checkout']['lname']);
 	$stmt->bindParam(':paramEmail', $_POST['checkout']['email']);
@@ -61,21 +72,27 @@ class checkoutClass
 	$stmt->bindParam(':paramPay', $_POST['checkout']['betalning']);
 	$stmt->bindParam(':paramFrakt', $_POST['checkout']['frakt']);
 	$stmt->execute();
-	$last_id = $conn->lastInsertId();
-	echo "<br>";
-	echo "fisk";
-	echo "<br>";
 	var_dump($stmt);
-	echo "<br>";
-	echo "sett order körs";
+	//var_dump($stmt);
+	//echo"<br>";
+	//var_dump($_POST);
+	/*$cart = new Cart;
+	$cart->getCartItems();
+	$cart = get_object_vars($cart);*/
+	//var_dump($cart);
+	$last_id = $conn->lastInsertId();
+
+	/*foreach ($cart['cart']['cartItems'] as $key => $value) {
+		$sql ="INSERT INTO `order_items`( `pid`, `qty`, `order_id`, `prod_title`, `prod_price`)
+		 VALUES ('".$key."','".$value['qty']."','".$last_id."','".$value['name']."','".$value['price']."')";
+		 $conn->exec($sql);
+		 }	
+	*/
+$conn->exec($sql);
+var_dump($sql);	
 }
 }
 }
 
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
-echo "<pre>";
 var_dump($_SESSION);
-echo "</pre>"; 
 
