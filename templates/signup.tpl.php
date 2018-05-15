@@ -1,6 +1,6 @@
 <?php require_once(TEMPLATES_FOLDER.'Header.php'); ?>
 
-<form action="" method="post">
+<form class ="pagemargin regform" action="" method="post">
 	<fieldset>
 		<legend>Registrera</legend>
 		<label>
@@ -37,7 +37,7 @@
 			<input type="text" name="phone">
 		</label>
 	</fieldset>
-	<input type="submit" value="Sign up">
+	<input type="submit" class="buy-btn"value="Sign up">
 </form>
 
 <?php require(TEMPLATES_FOLDER.'Footer.php'); ?>
