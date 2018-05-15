@@ -10,7 +10,7 @@
 			<a href="index.php?action=products&category=1">Gitarrer</a>
 		</div>
 		<div class="menu-category">
-			<a href="index.php?action=products&category=3">Baser</a>
+			<a id="linkcent" href="index.php?action=products&category=3">Baser</a>
 		</div>
 		<div class="menu-category">
 			<a href="index.php?action=products&category=5">Tillbehör</a>

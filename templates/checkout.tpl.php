@@ -5,7 +5,7 @@
 
 <h1>Checkout</h1>
 
-<div class="checkout"><div class="finalCart">
+<div class="checkout pagemargin"><div class="finalCart">
 	<h3>Varukorg</h3>
 	<form method="post" action="?action=updatecart">
 		

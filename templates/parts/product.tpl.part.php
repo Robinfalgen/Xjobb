@@ -1,7 +1,8 @@
 <?php require(TEMPLATES_FOLDER.'Header.php'); ?>
 
-		<div class="image-space">
-			<img src="<?php echo IMG_DIR . $product['img'];?>">
+		<div class="image-space"><!--HÅRDKODAD BILD-->
+			<!--<img src="/imgs/hardcoded.jpg<?php //echo IMG_DIR . $product['img'];?>">-->
+			<img src="/imgs/hardcoded.jpg>">
 		</div>
 		<div class="prod-info">
 			<h1 class="prod"><?php echo utf8_encode( $result['product_title']); ?> </h1>

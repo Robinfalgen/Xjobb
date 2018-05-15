@@ -1,5 +1,5 @@
 <input type="checkbox" id="cart" name="cart-box">
-	<label for="cart"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i></label>
+	<label for="cart"><i class="fa fa-shopping-basket fa-lg shopicon" aria-hidden="true"></i></label>
 	<div class="cart"><div class="triangle"></div>
 	
 	<h3>Varukorg</h3>

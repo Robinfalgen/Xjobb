@@ -2,8 +2,9 @@
 <!-- KOM IHÅG ATT ÄNDRA $product['prod_id'] så att den skriver ut 'id' istället med det sk. "as" commandet.-->
 	<?php
 		//var_dump($result);
-	?>
-	<img class="image" src="<?php echo IMG_DIR . $product['prod_price']; ?>">
+	?><!--HÅRDKODAT-->
+	<!--<img class="image" src="<?php //echo IMG_DIR . $product['prod_price']; ?>">-->
+	<img class="image prodlistimg" src="imgs/hardcoded.jpg">
 		<a href="?action=product&id=<?php echo $product['product_id'];?> "><h2><?php echo utf8_encode( $product['product_title']);?></h2></a>
 		<div class="price"><?php echo $product['product_price']; ?>:-</div>
 		

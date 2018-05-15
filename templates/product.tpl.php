@@ -1,10 +1,11 @@
 <?php require(TEMPLATES_FOLDER.'Header.php'); ?>
 		
 		<div class="image-space">
-			<img src="<?php echo IMG_DIR . $currentItem->imgurl;?>">
+			<img id="singprodimg"src="imgs/hardcoded.jpg">
+			<!--<img src="<?php //echo IMG_DIR . $currentItem->imgurl;?>">-->
 		</div>
 		
-		<div class="prod-info">
+		<div id="singinfodiv"class="prod-info">
 			<h1 class="prod"><?php echo $currentItem->title; ?> </h1>
 			<h2 class="price"><?php echo $currentItem->price; ?>:-</h2>
 			<p><?php echo utf8_encode($currentItem->descript); ?></p><br>

@@ -13,7 +13,7 @@ require(TEMPLATES_FOLDER.'Header.php');
 		<div class="start-banner">
 			<div class="img"><img src=></div>
 			<div class="info">
-				<p><?php echo $key['timestamp']; ?></p>
+				<p id ="time"><?php echo $key['timestamp']; ?></p>
 				<h1 class="banner"><?php echo utf8_encode( $key['title']); ?></h1>
 				<p class="content"><?php echo utf8_encode( $key['text'] );?></p>
 				<a class="banner-button" href=""></a>

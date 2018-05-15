@@ -10,9 +10,9 @@
 	<body>
 	<?php require_once INCLUDES_FOLDER. 'init.inc.php';?>
 	<?php if($auth->check()): //KONTROLLERAR OM SESSIONEN HAR ETT VÄRDE OCH AVGÖR OM INLOGGAD ELLER EJ. ?>
-		<p>Inloggad! <a href="?action=signout">Logga ut</a></p>
+		<p class ="topparam">Inloggad! <a id="topreg" href="?action=signout">Logga ut</a></p>
 	<?php else: // OM SESSION EJ SKAPAD, VÄNLIGEN LOGGA IN: ?>
-		<p>Du är inte inloggad!<a href="?action=signup">Registrera</a> eller logga in <!--<a href="?action=signin">Logga in</a>--></p>
+		<p class ="topparam"> Du är inte inloggad!<a id ="topreg" href="?action=signup">Registrera</a> eller logga in <!--<a href="?action=signin">Logga in</a>--></p>
 		<?php
 			require_once CLASS_DIR.'inc.class.signin.php';
 			$login = new login($auth);

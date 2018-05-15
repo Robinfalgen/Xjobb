@@ -1,5 +1,4 @@
-<form action="" method="post">
-		<legend>Logga in</legend>
+<form id="topform"action="" method="post">
 		<label>
 			E-mail (användarnamn)
 			<input type="text" name="email">
